@@ -1,0 +1,7 @@
+<body>
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide *ngFor="let image of images">
+    <rad-dashboard-carasouel [image]=image></rad-dashboard-carasouel>
+    </ng-template>
+  </ngb-carousel>
+</body>

@@ -1,0 +1,48 @@
+<div class=container>
+    <app-rad-acordian [title]='loa'>
+        Sample Loa
+    </app-rad-acordian>
+    <br>
+    <app-rad-acordian [title]='cb'>
+        <div>
+        <label id='bucketText'>Select the primary bucket :</label>
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">            
+            <label class="btn btn-secondary" id="bucket"  *ngFor='let bucket of buckets' [ngClass]="{active : bucket == primaryBucket}">
+            <input type="radio" [(ngModel)]='primaryBucket' [value]="bucket" (ngModelChange)="checkIfUserProfileSelected($event)" autocomplete="off" checked> {{bucket}}
+            </label>            
+        </div>
+        <br>
+        <br>
+        <div *ngIf="primaryBucket && primaryBucket!='UserProfile'">
+        <div>
+         <label id='Adctext'>Want to select the other buckets to get data related to primary :</label>
+        </div>
+        <div>
+         <input type="radio" name='selectSecondaryBucket'  [(ngModel)]='selectSecondaryBucket' [value]="true"  autocomplete="off">Yes
+         <input type="radio" name='selectSecondaryBucket'  id="setLeftMargin"  [(ngModel)]='selectSecondaryBucket' [value]="false" (ngModelChange)="checkSecondaryRequired($event)" autocomplete="off">No
+        </div>
+        <br>
+
+        <div *ngIf="selectSecondaryBucket">
+        <div>
+             <label id='bucketText'>Select the secondary bucket :</label>             
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary" id="bucket"  *ngFor='let bucket of buckets' [ngClass]="{active : bucketList[bucket]=== true}" [hidden]="bucket == primaryBucket">
+            <input type="checkbox" [(ngModel)]='bucketList[bucket]'  autocomplete="off" checked> {{bucket}}
+            </label>   
+        </div>
+        </div>        
+        </div>
+         <br>
+        <div class='form-group'  *ngIf="primaryBucket">
+         <form #cbForm="ngForm" class='col-md-12 formStyle' (ngSubmit)='cbFormSubmit(cbForm)'>
+             <input type='text' [(ngModel)]='cbInput' name='cbInput' class='col-md-6 form-control'>
+             <input type='submit'  id='submitButton' class='col-md-2 form-control marginLeft' [disabled]='selectSecondaryBucket && !isSecondaryBucketSelected'>
+         </form>
+        </div> 
+              
+        
+    </app-rad-acordian>
+</div>

@@ -1,0 +1,53 @@
+@import '../../styles.css';
+
+div.container{
+    margin-top: 2em !important;
+    margin-left: 2em !important;    
+}
+
+#bucket{
+    color:var(--themeColor);
+    background-color:#f4f6f7;
+    border-color:#cecaca;
+}
+
+#bucket.active{
+    color:#f4f6f7;
+    background-color:var(--themeColor);    
+}
+
+#bucketText{
+    font-weight: bold;
+    color : var(--themeColor);
+}
+
+#Adctext{
+    color : var(--themeColor);
+}
+
+#setLeftMargin{
+    margin-left:25px;
+}
+
+.paddingRight{
+    padding-right:5px;
+}
+
+.disableOutline:focus{
+    outline: none;
+}
+
+#submitButton{
+    background-color: var(--themeColor);
+    border-color: var(--themeColor);
+    color:#f4f6f7;
+}
+
+.formStyle{
+    display:inline-flex;
+    padding-left:0px !important;
+}
+
+.marginLeft{
+    margin-left:15px !important; 
+}

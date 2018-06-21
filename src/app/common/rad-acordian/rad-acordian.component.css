@@ -1,0 +1,16 @@
+@import '../../../styles.css';
+
+ngb-accordion .bg-info{
+    background-color: #f4f6f7 !important;
+    border-radius : 10px !important;
+}
+
+ngb-accordion a{
+    font-weight: bold;
+    color: var(--themeColor);
+}
+
+ngb-accordion div.card{
+    border-radius : 10px !important;
+    border-bottom:1px solid #dfdfdf !important;   
+}
